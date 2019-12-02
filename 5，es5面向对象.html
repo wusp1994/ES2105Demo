@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>面向对象和继承</title>
+</head>
+<body>
+<script>
+    //es5面向对象
+    function User(name,password){
+      this.name = name;
+      this.password = password;
+
+    }
+    User.prototype.showName = function () {
+      alert(this.name)
+    }
+    User.prototype.showPassword = function () {
+      alert(this.password)
+    }
+
+    var u1 = new User('wusp',123)
+    u1.showName()
+    u1.showPassword()
+
+        //-------es5继承
+    function VipUser(name,pass,level){
+        User.call(this,name,pass)
+      this.level = level;
+    }
+
+    VipUser.prototype = new User();
+    VipUser.prototype.construtor = VipUser;
+    
+    VipUser.prototype.showLevel = function () {
+      alert(this.level)
+    }
+
+    var v1 = new VipUser('vipUser',1233,`Lv3`)
+    v1.showName()
+    v1.showPassword()
+    v1.showLevel()
+
+
+    //es6面向对象
+    class UserEs6{
+
+      //constructor 构造器
+      constructor(name,pass){
+        this.name = name;
+        this.pass = pass;
+      }
+
+      showName(){
+        alert(this.name)
+      }
+
+      showPass(){
+        alert(this.pass)
+      }
+
+    }
+
+    var u2 = new UserEs6('blue',1234)
+    u2.showName()
+    u2.showPass()
+
+</script>
+</body>
+</html>

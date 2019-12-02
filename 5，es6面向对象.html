@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>es6面向对象和继承</title>
+</head>
+<body>
+<script>
+  /**
+   * ES6的面向对象：
+        1.class关键字、构造器和类分开了
+        2.class里面直接加方法
+
+   继承：意义在于扩展，我们写东西不可能从零开始写，需要更为方便的方式复用已有的东西。类似迭代版本，不断扩展功能
+
+   super
+
+   超类==父类
+
+   */
+
+    //es6面向对象
+    class UserEs6{
+
+      //constructor 构造器
+      constructor(name,pass){
+        this.name = name;
+        this.pass = pass;
+      }
+
+      showName(){
+        alert(this.name)
+      }
+
+      showPass(){
+        alert(this.pass)
+      }
+
+    }
+
+    //继承
+    class VipUser extends UserEs6{
+      constructor(name,pass,level){
+        super(name,pass)
+        this.level = level;
+      }
+
+      showLevel(){
+        alert(this.level)
+      }
+    }
+
+    var u2 = new UserEs6('blue',1234)
+    u2.showName()
+    u2.showPass()
+
+    var vip = new VipUser('vipUser',4546,'lv66')
+    vip.showName()
+    vip.showPass()
+    vip.showLevel()
+
+
+
+</script>
+</body>
+</html>

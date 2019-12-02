@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>generator</title>
+</head>
+<body>
+
+<script>
+
+    //==================基础用法
+    //yield ：暂停函数执行，等待next()触发
+
+    function* show() {
+      alert('1')
+
+      yield;
+
+      alert('2')
+    }
+
+    //无法像普通函数一样调用，需要使用 generator 对象的next()
+    let step = show();
+    step.next();//首次调用相当于启动
+    step.next();//首次调用相当于启动
+
+    console.log(step)
+
+    //=================yield 参数
+
+
+    //=================yield 参数
+
+</script>
+
+</body>
+</html>

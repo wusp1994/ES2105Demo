@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>generator</title>
+</head>
+<body>
+
+<script>
+    //=================yield 返回
+    //yield ：暂停函数执行，等待next()触发
+
+    function* show() {
+      alert('1')
+
+      yield 'yield1';
+
+      yield 'yield2';
+
+      alert('2')
+    }
+
+    //无法像普通函数一样调用，需要使用 generator 对象的next()
+    let step = show();
+    let res1 = step.next();//首次启动
+    let res2 = step.next();//第一个yield
+    let res3 = step.next();//第二个yield
+
+    //done 表示是否全部完成
+    console.log(res1,'首次启动') //{value:'yield1',done:false}
+    console.log(res2,'第一个yield')//{value:'yield2',done:false}
+    console.log(res3,'第二个yield')//{value:undefined,done:true}
+
+</script>
+
+</body>
+</html>
